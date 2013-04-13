@@ -12,17 +12,17 @@ public class GaussianGeneratorConsole {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
-		double[] s0Array = {1.0, 1.0};
+		double[] s0Array = {3.0, 0.0};
 		Vector<Double> s0 = new Vector<Double>();
 		for (double s0Comp: s0Array) {
 			s0.add(s0Comp);
 		}
-		double[] s1Array = {1.0, 0.0};
+		double[] s1Array = {0.0, 0.0};
 		Vector<Double> s1 = new Vector<Double>();
 		for (double s1Comp: s1Array) {
 			s1.add(s1Comp);
 		}
-		double[] s2Array = {-1.0, 0.0};
+		double[] s2Array = {-5.0, 0.0};
 		Vector<Double> s2 = new Vector<Double>();
 		for (double s2Comp: s2Array) {
 			s2.add(s2Comp);
@@ -34,6 +34,7 @@ public class GaussianGeneratorConsole {
 		gaussianKernel.setSupportVector(0, s0);
 		gaussianKernel.setSupportVector(1, s1);
 		gaussianKernel.setSupportVector(2, s2);
+		gaussianKernel.setGamma(0.5);
 		
 		gaussianKernel.writeArffFile("/Users/hok1/Documents/SVM/test3.arff", "gaussian", 1000);
 	}
